@@ -1,0 +1,10 @@
+{
+  "name": "AudioFlow",
+  "country": "CO",
+  "domains": [
+    "audioflow"
+  ],
+  "homeassistant": "2025.1.0",
+  "render_readme": true
+}
+Add HACS support
