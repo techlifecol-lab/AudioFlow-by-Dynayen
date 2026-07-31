@@ -30,7 +30,7 @@ class AudioFlowCoordinator(DataUpdateCoordinator):
         """Obtiene información del AudioFlow."""
 
         try:
-            return await self.api.get_status()
+            return await self.api.get_zones()
 
         except Exception as err:
             raise UpdateFailed(f"Error comunicando con AudioFlow: {err}")
