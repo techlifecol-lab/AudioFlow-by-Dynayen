@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AudioFlow",
+        "description": "Configure your AudioFlow audio zone controller.",
+        "data": {
+          "host": "IP Address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to AudioFlow.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "Device already configured."
+    }
+  }
+}
