@@ -1,1 +1,20 @@
-{}
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "AudioFlow",
+        "description": "Ingrese la dirección IP del controlador AudioFlow.",
+        "data": {
+          "host": "Dirección IP"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No fue posible conectarse al controlador AudioFlow.",
+      "unknown": "Error inesperado."
+    },
+    "abort": {
+      "already_configured": "Este controlador AudioFlow ya está configurado."
+    }
+  }
+}
