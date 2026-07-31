@@ -1,29 +1,39 @@
-"""API for AudioFlow."""
-
-from __future__ import annotations
+"""AudioFlow REST API client."""
 
 import aiohttp
 
 
 class AudioFlowApi:
-    """AudioFlow API client."""
 
-    def __init__(self, host: str):
-        self.host = host
+    def __init__(self, host):
+        self.host = host.rstrip("/")
 
-    async def get(self, endpoint: str):
-        """Execute GET request."""
-        url = f"http://{self.host}/{endpoint}"
+    async def get_status(self):
+
+        url = f"http://{self.host}/status"
 
         async with aiohttp.ClientSession() as session:
-            async with session.get(url) as response:
+            async with session.get(url, timeout=5) as response:
+
                 response.raise_for_status()
+
                 return await response.json()
 
-    async def get_info(self):
-        """Read device information."""
-        return await self.get("switch")
+    async def set_zone_source(self, zone, source):
 
-    async def get_zones(self):
-        """Read zones."""
-        return await self.get("zones")
+        url = f"http://{self.host}/zones/{zone}"
+
+        payload = {
+            "source": source
+        }
+
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                url,
+                json=payload,
+                timeout=5,
+            ) as response:
+
+                response.raise_for_status()
+
+                return await response.json()
