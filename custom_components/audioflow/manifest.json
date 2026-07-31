@@ -1,1 +1,15 @@
-
+{
+  "domain": "audioflow",
+  "name": "AudioFlow",
+  "version": "1.0.0",
+  "documentation": "https://github.com/techlifecol-lab/AudioFlow-by-Dynayen",
+  "issue_tracker": "https://github.com/techlifecol-lab/AudioFlow-by-Dynayen/issues",
+  "config_flow": true,
+  "iot_class": "local_polling",
+  "requirements": [
+    "aiohttp>=3.9.0"
+  ],
+  "codeowners": [
+    "@techlifecol-lab"
+  ]
+}
